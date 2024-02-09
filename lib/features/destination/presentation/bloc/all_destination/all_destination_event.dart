@@ -6,3 +6,6 @@ sealed class AllDestinationEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class OnGetAllDestination extends AllDestinationEvent {}
+

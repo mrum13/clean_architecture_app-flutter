@@ -25,7 +25,8 @@ class DestinationRemoteDataSourceImpl implements DestinationRemoteDataSource {
       List list = jsonDecode(response.body);
       return list.map((e) => DestinationModel.fromJson(e)).toList();
     } else if (response.statusCode==404) {
-      throw NotFoundException();
+      Map body = jsonDecode(response.body);
+      throw NotFoundException(body['message']);
     } else {
       throw ServerException();
     }
@@ -45,7 +46,8 @@ class DestinationRemoteDataSourceImpl implements DestinationRemoteDataSource {
       List list = jsonDecode(response.body);
       return list.map((e) => DestinationModel.fromJson(e)).toList();
     } else if (response.statusCode==404) {
-      throw NotFoundException();
+      Map body = jsonDecode(response.body);
+      throw NotFoundException(body['message']);
     } else {
       throw ServerException();
     }
@@ -60,7 +62,8 @@ class DestinationRemoteDataSourceImpl implements DestinationRemoteDataSource {
       List list = jsonDecode(response.body);
       return list.map((e) => DestinationModel.fromJson(e)).toList();
     } else if (response.statusCode==404) {
-      throw NotFoundException();
+      Map body = jsonDecode(response.body);
+      throw NotFoundException(body['message']);
     } else {
       throw ServerException();
     }
